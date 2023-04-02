@@ -34,15 +34,16 @@ class SPModel {
       $stmt->bindParam(':ID', $id);
       $stmt->execute();
     }
-    function updateSP($id,$TenSP, $MoTa, $Gia, $Anh) {
-      $sql = "UPDATE sp set TenSP =: TenSP, MoTa =: MoTa, Gia =: Gia, Anh =: Anh where id =: st";
+    function updateSP($TenSP,$MoTa,$id) {
+      $sql = "UPDATE sp set TenSP =: TenSP, MoTa =: MoTa where id =: st";
       $stmt = $this->db->prepare($sql);
       return $stmt->execute(array(
-        ':st' => $id,
+        
         ':TenSP' => $TenSP,
         ':MoTa' => $MoTa,
-        ':Gia' => $Gia,
-        ':Anh' => $Anh,
+        // ':Gia' => $Gia,
+        // ':Anh' => $Anh,
+        ':st' => $id
           
       ));
     }
@@ -64,6 +65,22 @@ class SPModel {
       $stmt->execute();
       $sp = $stmt->fetchAll(PDO::FETCH_ASSOC);
       return $sp;
+    }
+
+    function updateAnh($userId, $avatar) {
+      $sql = "UPDATE sp SET Anh =:a WHERE id  =:i";
+      $stmt = $this->db->prepare($sql);
+      return $stmt->execute(array(
+        ':a' => $avatar,
+        ':i' => $userId
+      ));
+    }
+    public function getSPp($id)
+    {
+        $sql = "SELECT * FROM sp WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
   }
 ?>

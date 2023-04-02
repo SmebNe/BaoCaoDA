@@ -4,9 +4,13 @@ $routes = [
     'controller' => 'SPController',
     'action' => 'index'
   ],
-  'danh-sach' => [
+  'admin' => [
     'controller' => 'SPController',
     'action' => 'getListSP'
+  ],
+  'danh-sach-user' => [
+    'controller' => 'AccountController',
+    'action' => 'getListUser'
   ],
   'home' => [
     'controller' => 'SPController',
@@ -40,8 +44,21 @@ $routes = [
     'controller' => 'AccountController',
     'action' => 'editAvatar'
   ] ,
+  'edit-anh' => [
+    'controller' => 'SPController',
+    'action' => 'editAnh'
+  ] ,
   'cT' => [
     'controller' => 'SPController',
     'action' => 'cT'
+  ] ,
+  'detail' => [
+    'controller' => 'SPController',
+    'action' => 'detail'
+  ] 
+  ,
+  'timkiem' => [
+    'controller' => 'SPController',
+    'action' => 'timkiem'
   ] 
 ];

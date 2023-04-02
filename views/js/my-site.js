@@ -1,8 +1,9 @@
-$(document).on('click', '#edit-btn', function () {
+$(document).on('click', '.btn-edit', function () {
     // debugger;
     var id = $(this).data('id');
-    var TenSP = $(this).data('TenSP');
-    var MoTa = $(this).data('MoTa');
+    var TenSP = $(this).data('id');
+
+    var MoTa = $(this).data('id');
     // alert ("Nhận button");
     // fill vào form
     $('input[name="TenSP"]').val(TenSP);
@@ -10,7 +11,7 @@ $(document).on('click', '#edit-btn', function () {
     $('input[name="id"]').val(id);
 });
 $(document).on('click', '.btn-save', function () {
-    debugger;
+     debugger;
     var TenSP = $('input[name = "TenSP"]').val();
     var MoTa = $('input[name = "MoTa"]').val();
     var id = $('input[name = "id"]').val();

@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
 <?php
 include_once('views/shares/header.php');
 ?>
- <style>
+
+<body>
+<style>
       body {
         background-color: #fce6e6; /* màu hồng nhạt */
       }
@@ -37,8 +36,6 @@ include_once('views/shares/header.php');
         background-color: #d1006b; /* màu hồng đậm khi hover */
       }
     </style>
-</head>
-<body>
 	<form method="post"   action="?route=register">
 		<label for="name">Họ và tên:</label>
 		<input type="text" id="name" name="name" required>
@@ -51,8 +48,9 @@ include_once('views/shares/header.php');
 
 		<button type="submit">Đăng ký</button>
 	</form>
+
   <?php
 include_once('views/shares/footer.php');
 ?>
 </body>
-</html>
+

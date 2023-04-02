@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
+
 <?php
 include_once('views/shares/header.php');
 ?>
- <style>
-      body {
+<body>
+  <style>
+       body {
         background-color: #fce6e6; /* màu hồng nhạt */
       }
       form {
@@ -37,8 +36,7 @@ include_once('views/shares/header.php');
         background-color: #d1006b; /* màu hồng đậm khi hover */
       }
     </style>
-</head>
-<body>
+
 	<form method="post"   action="?route=login">
 		<label for="email">Email:</label>
 		<input type="email" id="email" name="email" required>

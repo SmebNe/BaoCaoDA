@@ -1,5 +1,6 @@
 <?php
-include_once('views/shares/header.php');
+error_reporting(0);
+include_once('views/shares/header1.php');
 ?>
 <table class="table">
   <thead>
@@ -14,7 +15,9 @@ include_once('views/shares/header.php');
     </tr>
   </thead>
   <tbody>
-    <?php 
+    <?php  
+    error_reporting(0);
+
     // $formatted_num = number_format($sp['Gia'], 3, '.', '');
     foreach ($sp as $st) { ?>
       
@@ -24,6 +27,7 @@ include_once('views/shares/header.php');
         <td> <?php echo $st['MoTa'] ?></td>
         <td> <?php echo number_format($st['Gia'], 3, '.', '')."VND"?></td>
         <?php
+        error_reporting(0);
            $ANH = $st['Anh'];
           echo "<td><a href=''> <img width='100px' src='views/imagesSP/".$ANH."' /> </a> </td>";
              ?>                                             
@@ -46,7 +50,11 @@ include_once('views/shares/header.php');
           <div class="mb-3">
             <label for="TenSP" class="col-form-label">TÊN SẢN PHẨM:</label>
             <input type="text" class="form-control" id="TenSP" name="TenSP">
-          </div>
+          </div> 
+           <!-- <div class="mb-3">
+            <label for="id" class="col-form-label">id:</label>
+            <input type="text" class="form-control" id="id" name="id">
+          </div> -->
           <div class="mb-3">
             <label for="MoTa"  class="col-form-label">MÔ TẢ:</label>
             <input type="text" class="form-control" id="MoTa" name= "MoTa">
@@ -63,5 +71,6 @@ include_once('views/shares/header.php');
 </div>
 
 <?php
+error_reporting(0);
 include_once('views/shares/footer.php');
 ?>

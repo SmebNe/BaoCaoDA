@@ -1,5 +1,5 @@
 <?php
-include_once('views/shares/header.php');
+include_once('views/shares/header1.php');
 ?>
 <body>
   <style>
@@ -58,7 +58,8 @@ include_once('views/shares/header.php');
   <div class="mb-3">
     <label for="Anh" class="form-label"> Ảnh </label>
     <input type="text" class="form-control" id="Anh" name="Anh">
-    <input type="file" class="form-control" id="avatar" name="avatar">
+    <!-- <input type="file" class="form-control" id="anh" name="anh"> -->
+    <a href='?route=edit-anh'>Chọn ảnh </a>
   </div>
 
 

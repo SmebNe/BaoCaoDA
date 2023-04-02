@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>TPShopper</title>
+    <title>TPADMIN</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -40,32 +40,10 @@
         <div class="row align-items-center py-3 px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
                 <a href="" class="text-decoration-none">
-                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">TP</span>Shopper</h1>
+                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">TP</span>Admin</h1>
                 </a>
             </div>
-            <div id="search" class="col-lg-6 col-6 text-left">
-                <!-- <form action="" method="POST">
-                    <div class="input-group">
-                        <input name="txtSearch" type="text" class="form-control" placeholder="Search for products">
-                        <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
-                                <i class="fa fa-search"></i>
-                            </span>
-                        </div>
-                    </div>
-                </form> -->
-            </div>
-     
-            <div class="col-lg-3 col-6 text-right">
-                <!-- <a href="" class="btn border">
-                    <i class="fas fa-heart text-primary"></i>
-                    <span class="badge">0</span>
-                </a>
-                <a href="" class="btn border">
-                    <i class="fas fa-shopping-cart text-primary"></i>
-                    <span class="badge">0</span>
-                </a> -->
-            </div>
+           
         </div>
     </div>
   <div class="row border-top px-xl-5 ">
@@ -80,9 +58,10 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                   <div class="navbar-nav mr-auto py-0">
-                    <a href="?route=home" class="nav-item nav-link  ">Trang Chủ</a>
-                      <!-- <a  href="?"  class="visibility nav-item nav-link">Thêm Sản Phẩm</a>
-                      <a href="?route=danh-sach" class="nav-item nav-link ">Danh Sách</a> -->
+                    <!-- <a href="?route=home" class="nav-item nav-link  ">Trang Chủ</a> -->
+                      <a href="?" class="nav-item nav-link">Thêm Sản Phẩm</a>
+                      <a href="?route=admin" class="nav-item nav-link ">Danh Sách Sản Phẩm</a>
+                      <a href="?route=danh-sach-user" class="nav-item nav-link ">Danh Sách Người Dùng</a>
                         <!-- <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                                 <div class="dropdown-menu rounded-0 m-0">
@@ -90,25 +69,9 @@
                                     <a href="checkout.html" class="dropdown-item">Checkout</a>
                                 </div>
                             </div> -->
-                      <a href="?route=cT" class="nav-item nav-link">Liên Hệ</a>
+                      <!-- <a href="?route=cT" class="nav-item nav-link">Liên Hệ</a> -->
                     </div>
-                    <div class="navbar-nav ml-auto py-0">
-                      <?php 
-                        // if(isset($_SESSION['Admin'])){
-                        //   echo  "<div class='navbar-nav ml-auto py-0'> <a class='nav-item nav-link'>Hello Admin</a></div>";
-                        // }
-                        if(isset($_SESSION['UserId'])){
-                          error_reporting(0);
-                          echo  "<div class='navbar-nav ml-auto py-0'> <a  href='?route=logout' class='nav-item nav-link'>Đăng Xuất</a></div>";
-                          // hien thi avatar ??: null or empty
-                          $avatar = empty($_SESSION['Avatar']) ? 'avt.jpg' : $_SESSION['Avatar'];
-                          echo "<li> <a href='?route=edit-avatar'> <img width='40px' src='views/images/".$avatar."' /> </a>  </li>";
-                          echo "<li><span class='nav-link text-danger ' >Xin chào: ".$_SESSION['Name']."</span></li>";
-                          }else{
-                          echo "<div class='navbar-nav ml-auto py-0'> <a  href='?route=login' class='nav-item nav-link'>Đăng Nhập</a>  <a  href='?route=register' class='nav-item nav-link'>Đăng Ký</a></div>";
-                          }
-                      ?>
-                    </div>
+              
                   </div>
                 <div>
               </div>

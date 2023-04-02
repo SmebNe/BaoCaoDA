@@ -25,14 +25,22 @@ class Accountcontroller {
 
             $pass = $_POST['pass'];
             $email = $_POST['email'];
+            // $passAdmin =$_POST['pass'];
+            // $emailAdmin = $_POST['email'];
             $user =  $this->model->find($email);
+            $admin =  $this->model->findAdmin($email);
             if (!empty($user)){
                 $isLogin = password_verify($pass,$user['Pass']);
+                $isLoginAdmin = password_verify($pass,$admin['MatKhau']);
                 if($isLogin){
+                  // $_SESSION['Admin'] = $admin['id'];
                     $_SESSION['UserId'] = $user['id'];
                     $_SESSION['Name'] = $user['Fullname'];
                     $_SESSION['Avatar'] = $user['Avatar'];
-                    header('Location: ?');
+                    header('Location: ?route=home');
+                }else if($isLoginAdmin){
+                  $_SESSION['Admin'] = $admin['id'];
+                  header('Location: ?route=login');
                 }else{
                     $_SESSION['Error'] = "Sai mật khẩu";
                     header("Location: ?route=login");
@@ -61,9 +69,11 @@ class Accountcontroller {
 
         require_once ('views/register.php');
     }
-
+    function getListUser() {   
+      $user = $this->model->getUser();
+      require_once ('views/danhsachnguoidung.php');
+    }
     function editAvatar(){
-
         if($_SERVER['REQUEST_METHOD']=="POST"){
             session_start();
             $isUploaded = $this->uploadAvatar();
@@ -74,7 +84,7 @@ class Accountcontroller {
                 $isSuccess = $this->model->updateAvatar($userId,$avatar);
                 if($isSuccess){
                     $_SESSION['Avatar'] = $avatar;
-                    header("Location: ?");//chuyển về trang chủ
+                    header("Location: ?route=home");//chuyển về trang chủ
                     exit;
                 }
                 else{

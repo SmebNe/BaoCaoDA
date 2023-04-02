@@ -31,6 +31,17 @@ class userModel {
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
       }
-    
+      function findAdmin($email){
+        $stmt = $this->db->prepare("select * from admin where TenTK =:email");
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+      }
+      function getUser() {
+        $stmt = $this->db->prepare("select * from user");
+        $stmt->execute();
+        $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $user;
+      }
   }
-?>`
+?>
